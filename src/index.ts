@@ -31,19 +31,9 @@ export async function run(context: AfterPackContext, options: RunOptions = {}) {
   await buildConfig()
   const encryptorConfig = getConfig()
 
-  let appOutDir = context.appOutDir
+  const tempAppDir = path.join(context.appOutDir, '../', 'app')
 
-  if (context.packager.platform.name === 'mac') {
-    appOutDir = path.join(
-      appOutDir,
-      `${context.packager.appInfo.productFilename}.app`,
-      'Contents'
-    )
-  }
-
-  const tempAppDir = path.join(appOutDir, '../', 'app')
-
-  const resourcesDir = path.join(appOutDir, 'resources')
+  const resourcesDir = path.join(context.appOutDir, 'resources')
   const appAsarPath = path.join(resourcesDir, 'app.asar')
 
   // 先解压到缓存目录
@@ -132,7 +122,7 @@ export async function run(context: AfterPackContext, options: RunOptions = {}) {
 
   if (encryptorConfig.renderer.output) {
     const rendererOutPath = path.join(
-      appOutDir,
+      context.appOutDir,
       encryptorConfig.renderer.output
     )
     const rendererOutDir = path.dirname(rendererOutPath)

@@ -7,13 +7,7 @@ import { getAppResourcesMap } from './decrypt'
 import { readAppAsarMd5, readAppAsarMd5Sync } from './encrypt'
 import { mergeDefaultConfig } from './default-config'
 
-const platform = process.platform;
-
-let execDir = path.dirname(process.execPath)
-
-if (platform === 'darwin') {
-  execDir = path.join(execDir, '..');
-}
+const execDir = path.dirname(process.execPath)
 
 __encryptorConfig = mergeDefaultConfig(__encryptorConfig)
 
