@@ -7,11 +7,12 @@ import { getAppResourcesMap } from './decrypt'
 import { readAppAsarMd5, readAppAsarMd5Sync } from './encrypt'
 import { mergeDefaultConfig } from './default-config'
 
-const platform = process.platform
+const execDir = path.dirname(process.execPath)
+// const platform = process.platform
 
-let execDir = path.dirname(process.execPath)
+// let execDir = path.dirname(process.execPath)
 
-console.log(platform)
+// console.log(platform)
 // if (platform === 'darwin') {
 //   execDir = path.join(execDir, '..')
 // }
