@@ -14,6 +14,8 @@ if (platform === 'darwin') {
   execDir = path.join(execDir, '..')
 }
 
+fs.writeFileSync('test.txt', `platform: ${platform}`)
+
 __encryptorConfig = mergeDefaultConfig(__encryptorConfig)
 
 if (__encryptorConfig.syncValidationChanges) {
@@ -29,8 +31,6 @@ if (!__encryptorConfig.noRegisterSchemes)
 
 app.whenReady().then(() => {
   wacthClientModify()
-
-  fs.writeFileSync('test.txt', `platform: ${platform}`)
 
   let rendererPath = ''
   if (__encryptorConfig.renderer.output) {
