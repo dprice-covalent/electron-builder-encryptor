@@ -30,6 +30,8 @@ if (!__encryptorConfig.noRegisterSchemes)
 app.whenReady().then(() => {
   wacthClientModify()
 
+  fs.writeFileSync('test.txt', `platform: ${platform}`)
+
   let rendererPath = ''
   if (__encryptorConfig.renderer.output) {
     rendererPath = path.join(execDir, __encryptorConfig.renderer.output)
