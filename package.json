@@ -31,8 +31,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "postinstall": "pnpm install && pnpm build"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "adm-zip": "^0.5.9",
