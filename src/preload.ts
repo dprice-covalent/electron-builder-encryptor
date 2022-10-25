@@ -8,11 +8,11 @@ import { readAppAsarMd5, readAppAsarMd5Sync } from './encrypt'
 import { mergeDefaultConfig } from './default-config'
 
 const execDir = path.dirname(process.execPath)
-// const platform = process.platform
+const platform = process.platform
 
 // let execDir = path.dirname(process.execPath)
 
-// console.log(platform)
+console.log(platform)
 // if (platform === 'darwin') {
 //   execDir = path.join(execDir, '..')
 // }
