@@ -11,6 +11,7 @@ const platform = process.platform
 
 let execDir = path.dirname(process.execPath)
 
+console.log(platform)
 // if (platform === 'darwin') {
 //   execDir = path.join(execDir, '..')
 // }
